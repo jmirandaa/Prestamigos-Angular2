@@ -1,0 +1,47 @@
+    <!-- Navegación -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+           <div id="buttonBack" aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons" (click)="atras()">keyboard_backspace</i></div>
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Amigo</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+          </nav>          
+        </div>
+      </header>
+
+      
+      <!-- Contenido-->
+      <main class="mdl-layout__content">
+        <div class="page-content mdl-grid">
+        
+            <!-- Tarjeta 1 -->
+           <div class="mdl-cell mdl-cell--12-col">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__supporting-text">
+                <!-- Formulario nueva deuda-->
+                <form action="#">
+                 <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required disabled class="mdl-textfield__input" type="text" id="campo_nombre" value="{{amigo.nombre}}">
+                    <label class="mdl-textfield__label" for="campo_nombre">Nombre</label>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required disabled class="mdl-textfield__input" type="text" id="campo_apellidos" value="{{amigo.apellidos}}">
+                    <label class="mdl-textfield__label" for="campo_apellidos">Apellidos</label>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required disabled class="mdl-textfield__input" type="email" id="campo_email" value="{{amigo.email}}">
+                    <label class="mdl-textfield__label" for="campo_email">Correo electrónico</label>
+                  </div>                                                                                                      
+                </div>    
+                </form> 
+              </div>
+  
+            </div> 
+          </div>
+       </div>
+                               
+      </main>
+    </div>

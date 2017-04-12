@@ -1,0 +1,61 @@
+    <!-- Navegación -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+           <div id="buttonBack" (click)="atras()" aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons">keyboard_backspace</i></div>
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Registro</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+            <label class="mdl-button mdl-js-button mdl-button--icon">
+                <i id="registroAccion" class="material-icons" (click)=procederRegistro()>done</i>
+            </label>
+          </nav>          
+        </div>
+      </header>
+
+      
+      <!-- Contenido-->
+      <main class="mdl-layout__content">
+        <div class="page-content mdl-grid">
+        
+            <!-- Tarjeta 1 -->
+           <div class="mdl-cell mdl-cell--12-col">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__supporting-text">
+                <!-- Formulario nueva deuda-->
+                <form id="formNuevoUsuario">
+                 <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required class="mdl-textfield__input" [(ngModel)]="model.nombre" #nombre="ngModel" type="text" id="campo_nombre" name="campo_nombre">
+                    <label class="mdl-textfield__label" for="campo_nombre">Nombre</label>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required class="mdl-textfield__input" [(ngModel)]="model.apellidos" #apellidos="ngModel" type="text" id="campo_apellidos" name="campo_apellidos">
+                    <label class="mdl-textfield__label" for="campo_apellidos">Apellidos</label>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required class="mdl-textfield__input" [(ngModel)]="model.email" #email="ngModel" type="email" id="campo_email" name="campo_email">
+                    <label class="mdl-textfield__label" for="campo_email">Correo electrónico</label>
+                  </div> 
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required class="mdl-textfield__input" [(ngModel)]="model.emailRep" #emailRep="ngModel" type="email" id="campo_email_c" name="campo_email_c">
+                    <label class="mdl-textfield__label" for="campo_email_c">Repetir correo electrónico</label>
+                  </div> 
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required class="mdl-textfield__input" [(ngModel)]="model.password" #password="ngModel" type="password" id="campo_password" name="campo_password">
+                    <label class="mdl-textfield__label" for="campo_password">Contraseña</label>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required class="mdl-textfield__input" [(ngModel)]="model.passwordRep" #passwordRep="ngModel"type="password" id="campo_password_c" name="campo_password_c">
+                    <label class="mdl-textfield__label" for="campo_passowrd_c">Repetir contraseña</label>
+                  </div>                                                                                                      
+                </div>    
+                </form> 
+              </div>
+  
+            </div> 
+          </div>
+       </div>
+      </main>
+  </div>

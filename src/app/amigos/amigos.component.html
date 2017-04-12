@@ -1,0 +1,45 @@
+    <!-- Navegación -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Amigos</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation">
+            <label class="mdl-button mdl-js-button mdl-button--icon">
+                <i id="nuevoAmigo" class="material-icons">add</i>
+            </label>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Amigos</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" (click)="this.ui.pantallaDeben()">Me deben</a>
+          <a class="mdl-navigation__link" (click)="this.ui.pantallaDebo()">Mis deudas</a>
+          <a class="mdl-navigation__link" (click)="this.ui.pantallaResumen()">Resumen</a>
+          <a class="mdl-navigation__link" (click)="this.ui.pantallaHistorial()">Historial</a>
+          <a class="mdl-navigation__link" (click)="this.ui.pantallaPerfil()">Perfil</a>
+          <a class="mdl-navigation__link" (click)="this.ui.cerrarSesion()">Cerrar sesión</a>
+        </nav>
+      </div>
+      
+      <!-- Contenido-->
+      <main class="mdl-layout__content">
+        <div class="page-content mdl-grid">
+        
+        <ul *ngFor="let amigo of amigos" class="list-wide mdl-list">
+          <li class="mdl-list__item" (click)="detallesAmigo(amigo.id,amigo.nombre,amigo.apellidos,amigo.email)">
+            <span class="mdl-list__item-primary-content">
+              <i class="material-icons  mdl-list__item-avatar">person</i>
+              {{amigo.nombre}} {{amigo.apellidos}}
+            </span>
+          </li>
+        </ul>
+
+                
+                                  
+        </div>
+      </main>
+    </div>

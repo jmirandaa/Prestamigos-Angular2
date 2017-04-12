@@ -1,0 +1,50 @@
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+           <div id="buttonBack" aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons" (click)=atras()>keyboard_backspace</i></div>
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Nueva deuda</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <nav>
+            <label class="mdl-button mdl-js-button mdl-button--icon">
+                <i id="nuevaDeudaAccion" class="material-icons" (click)=procederNuevaDeuda()>send</i>
+            </label>
+          </nav>          
+        </div>
+      </header>
+
+      
+      <!-- Contenido-->
+      <main class="mdl-layout__content">
+        <div class="page-content mdl-grid">
+        
+            <!-- Tarjeta 1 -->
+           <div class="mdl-cell mdl-cell--12-col">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__supporting-text">
+                <!-- Formulario nueva deuda-->
+                <form id="formNuevaDeuda">
+                 <input type="hidden" name="tipo" value="${requestScope.tipo}"> 
+                 <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required minlength=3 class="mdl-textfield__input" [(ngModel)]="model.nombre" #nombre="ngModel" type="text" name="campo_amigo" id="campo_amigo">
+                    <label class="mdl-textfield__label" for="campo_amigo">Nombre del amigo</label>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required minlength=3 class="mdl-textfield__input" [(ngModel)]="model.concepto" #concepto="ngModel" type="text" name="campo_concepto" id="campo_concepto">
+                    <label class="mdl-textfield__label" for="campo_concepto">Concepto</label>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required min="0" class="mdl-textfield__input" [(ngModel)]="model.cantidad" #cantidad="ngModel" type="number" name="campo_cantidad" id="campo_cantidad">
+                    <label class="mdl-textfield__label" for="campo_cantidad">Cantidad</label>
+                  </div>                                             
+                </div>    
+                </form> 
+              </div>
+  
+            </div> 
+          </div>
+       </div>
+        
+      </main>
+    </div>

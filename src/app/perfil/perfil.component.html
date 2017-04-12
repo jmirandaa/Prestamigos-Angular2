@@ -1,0 +1,67 @@
+    <!-- Navegación -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Perfil</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+            <label class="mdl-button mdl-js-button mdl-button--icon">
+                <i id="editarAccion" class="material-icons" (click)="procederEditar()">done</i>
+            </label>
+          </nav>          
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Perfil</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" (click)="this.ui.pantallaDeben()">Me deben</a>
+          <a class="mdl-navigation__link" (click)="this.ui.pantallaDebo()">Mis deudas</a>
+          <a class="mdl-navigation__link" (click)="this.ui.pantallaResumen()">Resumen</a>
+          <a class="mdl-navigation__link" (click)="this.ui.pantallaHistorial()">Historial</a>
+          <a class="mdl-navigation__link" (click)="this.ui.pantallaAmigos()">Amigos</a>
+          <a class="mdl-navigation__link" (click)="this.ui.cerrarSesion()">Cerrar sesión</a>          
+        </nav>
+      </div>
+      
+      <!-- Contenido-->
+      <main class="mdl-layout__content">
+        <div class="page-content mdl-grid">
+        
+            <!-- Tarjeta 1 -->
+           <div class="mdl-cell mdl-cell--12-col">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__supporting-text">
+                <!-- Formulario nueva deuda-->
+                <form id="formPerfil">
+                 <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required minlength=3 class="mdl-textfield__input" type="text" [(ngModel)]="model.nombre" name="campo_nombre" id="campo_nombre" value="NOMBRE">
+                    <label class="mdl-textfield__label" for="campo_nombre">Nombre</label>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required minlength=3 class="mdl-textfield__input" type="text" [(ngModel)]="model.apellidos" name="campo_apellidos" id="campo_apellidos" value="APELLIDOS">
+                    <label class="mdl-textfield__label" for="campo_apellidos">Apellidos</label>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input disabled class="mdl-textfield__input" type="email" [(ngModel)]="model.email" id="campo_email" name="campo_email" value="CORREO@CORREO.com">
+                    <label class="mdl-textfield__label" for="campo_email">Correo electrónico</label>
+                  </div> 
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input required minlength=3 class="mdl-textfield__input" type="password" [(ngModel)]="model.password" name="campo_password" id="campo_password">
+                    <label class="mdl-textfield__label" for="campo_password">Contraseña</label>
+                  </div>
+                  <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input minlength=3 required class="mdl-textfield__input" type="password" [(ngModel)]="model.passwordRep" name="campo_password_c" id="campo_password_c">
+                    <label class="mdl-textfield__label" for="campo_passowrd_c">Repetir contraseña</label>
+                  </div>                                                                                                      
+                </div>    
+                </form> 
+              </div>
+  
+            </div> 
+          </div>
+       </div>   
+                             
+      </main>
+    </div>
